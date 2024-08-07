@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mongo
+  name: mongo
+  namespace: workbuddy-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mongo
+    spec:
+      volumes:
+        - name: mongo-vol
+          hostPath:
+            path: /mongo-data
+            type: DirectoryOrCreate
+      containers:
+        - image: mongo
+          name: mongo
+          volumeMounts:
+            - name: mongo-vol
+              mountPath: /data/db
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-cred
+                  key: username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-cred
+                  key: password
+          ports:
+            - name: mongo-port
+              containerPort: 27017
+          resources: {}
