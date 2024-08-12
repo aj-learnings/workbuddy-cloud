@@ -20,9 +20,8 @@ spec:
     spec:
       volumes:
         - name: redis-vol
-          hostPath:
-            path: /redis-data
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: redis-pvc
       containers:
         - image: redis
           name: redis

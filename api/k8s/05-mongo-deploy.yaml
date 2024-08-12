@@ -20,9 +20,8 @@ spec:
     spec:
       volumes:
         - name: mongo-vol
-          hostPath:
-            path: /mongo-data
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: mongo-pvc
       containers:
         - image: mongo
           name: mongo
