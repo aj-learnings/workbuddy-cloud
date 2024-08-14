@@ -19,7 +19,7 @@ services:
     volumes:
       - ./redis-data:/data
   workbuddy-api:
-      image: ajlearnings/workbuddy-api:v1
+    image: ajlearnings/workbuddy-api:v1
     container_name: workbuddy_app
     ports:
       - "9400:9400"

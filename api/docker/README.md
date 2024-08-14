@@ -24,4 +24,4 @@ However, in local machine installing [Docker Desktop](https://www.docker.com/pro
    ```
 
 
-The application will be served at http://localhost:9400
+The application will be served at http://localhost:9400/workbuddy

@@ -28,4 +28,4 @@ We need to have [Kubernetes](https://kubernetes.io/releases/download/) or [Minik
    APP_IP=$(kubectl -n workbuddy-app get svc workbuddy-app -o jsonpath='{.spec.clusterIP}')
    ```
 
-The application will be served at http://$APP_IP:80
+The application will be served at http://$APP_IP:80/workbuddy
