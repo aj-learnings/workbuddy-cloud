@@ -25,11 +25,11 @@ spec:
             - name: MONGO_HOST
               value: "workbuddy-mongo"
             - name: MONGO_PORT
-              value: "9401"
+              value: "9402"
             - name: REDIS_HOST
               value: "workbuddy-redis"
             - name: REDIS_PORT
-              value: "9402"
+              value: "9403"
             - name: MONGO_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
@@ -42,5 +42,5 @@ spec:
                   key: password
           ports:
             - name: app-port
-              containerPort: 9400
+              containerPort: 9401
           resources: {}

@@ -5,7 +5,7 @@ services:
     image: mongo:latest
     container_name: workbuddy_mongo
     ports:
-      - "9401:27017"
+      - "9402:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
@@ -15,14 +15,14 @@ services:
     image: redis:latest
     container_name: workbuddy_redis
     ports:
-      - "9402:6379"
+      - "9403:6379"
     volumes:
       - ./redis-data:/data
   workbuddy-api:
     image: ajlearnings/workbuddy-api:v1
-    container_name: workbuddy_app
+    container_name: workbuddy_api
     ports:
-      - "9400:9400"
+      - "9401:9401"
     environment:
       MONGO_HOST: workbuddy_mongo
       MONGO_PORT: 27017

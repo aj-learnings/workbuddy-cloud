@@ -1,10 +1,10 @@
 # Worbuddy Application
 
-Here, we will see how can we deploy the [workbuddy-api](https://github.com/aj-learnings/workbuddy-api) application with the help of **Docker** on any system.
+Here, we will see how can we deploy the [workbuddy-ui](https://github.com/aj-learnings/workbuddy-ui) application with the help of **Docker** on any system.
 
 ### Prerequisites
 
-We need to have Docker and Docker-compose installed. 
+We need to have Docker and Docker-compose installed.
 
 However, in local machine installing [Docker Desktop](https://www.docker.com/products/docker-desktop/) application will work too.
 
@@ -15,7 +15,7 @@ However, in local machine installing [Docker Desktop](https://www.docker.com/pro
 
    ```bash
    git clone https://github.com/aj-learnings/workbuddy-cloud.git
-   cd workbuddy-cloud/api/docker
+   cd workbuddy-cloud/ui/docker
    ```
 2. **Run the docker compose file**
 
@@ -24,4 +24,4 @@ However, in local machine installing [Docker Desktop](https://www.docker.com/pro
    ```
 
 
-The application will be served at http://localhost:9401/api/workbuddy
+The application will be served at http://localhost:9400

@@ -1,5 +1,8 @@
-# worbuddy-app
+# Worbuddy Application
 Here, we have different methods to deploy the workbuddy-app without the need of source code.
+
+### UI
+1. [Deployment with Docker](https://github.com/aj-learnings/workbuddy-cloud/tree/master/ui/docker)
 
 ### API
 1. [Deployment with Docker](https://github.com/aj-learnings/workbuddy-cloud/tree/master/api/docker)
@@ -8,4 +11,5 @@ Here, we have different methods to deploy the workbuddy-app without the need of 
 <br/>
 
 You can check for the source code below :
-1. [API](https://github.com/aj-learnings/workbuddy-api)
+1. [UI](https://github.com/aj-learnings/workbuddy-ui)
+2. [API](https://github.com/aj-learnings/workbuddy-api)

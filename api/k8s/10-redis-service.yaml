@@ -8,7 +8,7 @@ metadata:
   namespace: workbuddy-app
 spec:
   ports:
-    - port: 9402
+    - port: 9403
       protocol: TCP
       targetPort: 6379
   selector:

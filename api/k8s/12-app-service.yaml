@@ -10,6 +10,6 @@ spec:
   ports:
     - port: 80
       protocol: TCP
-      targetPort: 9400
+      targetPort: 9401
   selector:
     app: app
