@@ -1,2 +1,19 @@
+# Data
 *mongo-data
 *redis-data
+
+# Local Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform plan files
+*.tfplan
+
+# Backup files created by Terraform
+*.backup
+
+# .terraform directory (Terraform modules, plugins, etc.)
+.terraform/
+
+# Lock file used for dependency management
+.terraform.lock.hcl
