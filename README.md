@@ -1,6 +1,10 @@
 # Worbuddy Application
 Here, we have different methods to deploy the workbuddy-app without the need of source code.
 
+### Full Application
+1. [Deployment with Docker](https://github.com/aj-learnings/workbuddy-cloud/tree/master/docker)
+2. [Deployment with Terraform on AWS](https://github.com/aj-learnings/workbuddy-cloud/tree/master/terraform)
+
 ### UI
 1. [Deployment with Docker](https://github.com/aj-learnings/workbuddy-cloud/tree/master/ui/docker)
 
