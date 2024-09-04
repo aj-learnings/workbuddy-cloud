@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: workbuddy_mongo
+    ports:
+      - "9402:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./mongo-data:/data/db
+  redis:
+    image: redis:latest
+    container_name: workbuddy_redis
+    ports:
+      - "9403:6379"
+    volumes:
+      - ./redis-data:/data
+  workbuddy-api:
+    image: ajlearnings/workbuddy-api:v1
+    container_name: workbuddy_api
+    ports:
+      - "9401:9401"
+    environment:
+      MONGO_HOST: workbuddy_mongo
+      MONGO_PORT: 27017
+      REDIS_HOST: workbuddy_redis
+      REDIS_PORT: 6379
+      MONGO_ROOT_USERNAME: admin
+      MONGO_ROOT_PASSWORD: password
+    depends_on:
+      - mongo
+      - redis
+  workbuddy-ui:
+    image: ajlearnings/workbuddy-ui:v1
+    container_name: workbuddy_ui
+    ports:
+      - "9400:80"
+    environment:
+      API_URL: http://localahost:9401
+    depends_on:
+      - workbuddy-api
