@@ -22,24 +22,14 @@ spec:
         - image: ajlearnings/workbuddy-api:v1
           name: workbuddy-api
           env:
-            - name: MONGO_HOST
-              value: "workbuddy-mongo"
-            - name: MONGO_PORT
-              value: "9402"
+            - name: MONGO_URI
+              value: "mongodb://workbuddy-mongo:9402"
             - name: REDIS_HOST
               value: "workbuddy-redis"
             - name: REDIS_PORT
               value: "9403"
-            - name: MONGO_ROOT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-cred
-                  key: username
-            - name: MONGO_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-cred
-                  key: password
+            - name: REDIS_PASSWORD
+              value: ""
           ports:
             - name: app-port
               containerPort: 9401

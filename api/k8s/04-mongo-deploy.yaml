@@ -18,27 +18,18 @@ spec:
       labels:
         app: mongo
     spec:
+      securityContext:
+        runAsUser: 0
       volumes:
         - name: mongo-vol
           persistentVolumeClaim:
             claimName: mongo-pvc
       containers:
-        - image: mongo
+        - image: mongodb/mongodb-community-server:latest
           name: mongo
           volumeMounts:
             - name: mongo-vol
               mountPath: /data/db
-          env:
-            - name: MONGO_INITDB_ROOT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-cred
-                  key: username
-            - name: MONGO_INITDB_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-cred
-                  key: password
           ports:
             - name: mongo-port
               containerPort: 27017
