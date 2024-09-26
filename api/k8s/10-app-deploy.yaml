@@ -19,7 +19,7 @@ spec:
         app: app
     spec:
       containers:
-        - image: ajlearnings/workbuddy-api:v1
+        - image: ajlearnings/workbuddy-api:latest
           name: workbuddy-api
           env:
             - name: MONGO_URI

@@ -16,7 +16,7 @@ services:
     volumes:
       - ./redis-data:/data
   workbuddy-api:
-    image: ajlearnings/workbuddy-api:v1
+    image: ajlearnings/workbuddy-api:latest
     container_name: workbuddy_api
     ports:
       - "9401:9401"
@@ -28,7 +28,7 @@ services:
       - mongo
       - redis
   workbuddy-ui:
-    image: ajlearnings/workbuddy-ui:v1
+    image: ajlearnings/workbuddy-ui:latest
     container_name: workbuddy_ui
     ports:
       - "9400:80"

@@ -16,7 +16,7 @@ services:
     volumes:
       - ./redis-data:/data
   workbuddy-api:
-    image: ajlearnings/workbuddy-api:v1
+    image: ajlearnings/workbuddy-api:latest
     container_name: workbuddy_api
     ports:
       - "9401:9401"
