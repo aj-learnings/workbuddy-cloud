@@ -30,6 +30,10 @@ spec:
               value: "9403"
             - name: REDIS_PASSWORD
               value: ""
+            - name: SENDER_EMAIL
+              value: "<sender-password-here>"
+            - name: SENDER_PASSWORD
+              value: "<sender-password-here>"
           ports:
             - name: app-port
               containerPort: 9401

@@ -24,6 +24,9 @@ services:
       MONGO_URI: mongodb://workbuddy_mongo:27017
       REDIS_HOST: workbuddy_redis
       REDIS_PORT: 6379
+      REDIS_PASSWORD: ""
+      SENDER_EMAIL: "<sender-password-here>"
+      SENDER_PASSWORD: "<sender-password-here>"
     depends_on:
       - mongo
       - redis
