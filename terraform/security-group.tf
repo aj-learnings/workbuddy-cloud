@@ -1,9 +1,9 @@
-module "allow_all_workbuddy_sg" {
+module "workbuddy_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.2.0"
 
-  name = "allow-all-workbuddy"
-  description = "Security group that allows all inbound and outbound traffic"
+  name = "workbuddy-sg"
+  description = "Security group for the workbuddy application"
 
   ingress_with_cidr_blocks = [
     {
@@ -24,7 +24,7 @@ module "allow_all_workbuddy_sg" {
   ]
 
   tags = {
-    Name = "allow-all-workbuddy"
+    Name = "workbuddy-sg"
     Application = "WorkBuddy"
   }
 }

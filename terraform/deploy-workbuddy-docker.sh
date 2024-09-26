@@ -43,6 +43,8 @@ PUBLIC_IP=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/la
 
 # Change the API_URL in UI
 sudo sed -i "s#API_URL:.*#API_URL: http://$PUBLIC_IP:9401#g" /home/ec2-user/workbuddy-app/docker-compose.yaml
+sudo sed -i "s#SENDER_EMAIL:.*#SENDER_EMAIL: <email-here>#g" /home/ec2-user/workbuddy-app/docker-compose.yaml
+sudo sed -i "s#SENDER_PASSWORD:.*#SENDER_PASSWORD: <password-here>#g" /home/ec2-user/workbuddy-app/docker-compose.yaml
 
 # Start services defined in docker-compose.yaml
 sudo docker-compose -f "/home/ec2-user/workbuddy-app/docker-compose.yaml" up -d
