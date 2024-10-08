@@ -34,6 +34,12 @@ docker-compose --version
 # Create a folder
 sudo mkdir /home/ec2-user/workbuddy-app/
 
+# Assign permission to volume mountitn folder
+sudo mkdir -p /home/ec2-user/workbuddy-app/mongo-data
+sudo chmod 777 /home/ec2-user/workbuddy-app/mongo-data
+sudo mkdir -p /home/ec2-user/workbuddy-app/redis-data
+sudo chmod 777 /home/ec2-user/workbuddy-app/redis-data
+
 # Download docker-compose.yaml
 sudo curl -L https://raw.githubusercontent.com/aj-learnings/workbuddy-cloud/master/docker/docker-compose.yaml -o /home/ec2-user/workbuddy-app/docker-compose.yaml
 
