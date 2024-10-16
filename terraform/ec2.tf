@@ -4,7 +4,7 @@ module "workbuddy_app_ec2" {
 
   name = "workbuddy-app"
 
-  ami = var.ami_id
+  ami = data.aws_ami.amazon_linux_2.id
   instance_type = var.instance_type
 
   vpc_security_group_ids = [module.workbuddy_sg.security_group_id]

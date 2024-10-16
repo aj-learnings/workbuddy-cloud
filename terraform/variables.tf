@@ -1,8 +1,3 @@
-variable "ami_id" {
-  type = string
-  description = "AMI id"
-}
-
 variable "instance_type" {
   type = string
   description = "Type of Ec2 instance"
