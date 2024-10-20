@@ -34,6 +34,8 @@ spec:
               value: "<sender-password-here>"
             - name: SENDER_PASSWORD
               value: "<sender-password-here>"
+            - name: "KAFKA_URI"
+              value: "workbuddy-kafka:9405"
           ports:
             - name: app-port
               containerPort: 9401

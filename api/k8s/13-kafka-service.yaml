@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kafka
+  name: workbuddy-kafka
+  namespace: workbuddy-app
+spec:
+  ports:
+    - port: 9405
+      protocol: TCP
+      targetPort: 9092
+  selector:
+    app: kafka
