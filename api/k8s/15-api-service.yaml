@@ -3,13 +3,13 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: app
-  name: workbuddy-app
+    app: api
+  name: workbuddy-api
   namespace: workbuddy-app
 spec:
   ports:
-    - port: 80
+    - port: 9401
       protocol: TCP
       targetPort: 9401
   selector:
-    app: app
+    app: api

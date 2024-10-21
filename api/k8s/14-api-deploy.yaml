@@ -3,21 +3,31 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: app
-  name: app
+    app: api
+  name: api
   namespace: workbuddy-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: api
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: app
+        app: api
     spec:
+      initContainers:
+        - name: check-mongo
+          image: busybox
+          command: [ 'sh', '-c', 'until nc -z workbuddy-mongo 9402; do echo waiting for mongo; sleep 5; done' ]
+        - name: check-redis
+          image: busybox
+          command: [ 'sh', '-c', 'until nc -z workbuddy-redis 9403; do echo waiting for redis; sleep 5; done' ]
+        - name: check-kafka
+          image: busybox
+          command: [ 'sh', '-c', 'until nc -z workbuddy-kafka 9405; do echo waiting for kafka; sleep 5; done' ]
       containers:
         - image: ajlearnings/workbuddy-api:latest
           name: workbuddy-api
@@ -37,6 +47,6 @@ spec:
             - name: "KAFKA_URI"
               value: "workbuddy-kafka:9405"
           ports:
-            - name: app-port
+            - name: api-port
               containerPort: 9401
           resources: {}

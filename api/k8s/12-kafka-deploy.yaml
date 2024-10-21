@@ -18,6 +18,10 @@ spec:
       labels:
         app: kafka
     spec:
+      initContainers:
+        - name: check-zookeeper
+          image: busybox
+          command: [ 'sh', '-c', 'until nc -z workbuddy-zookeeper 9404; do echo waiting for zookeeper; sleep 5; done' ]
       containers:
         - image: confluentinc/cp-kafka:latest
           name: kafka
